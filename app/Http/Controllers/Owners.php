@@ -39,7 +39,7 @@ class Owners extends Controller
         // create a new article, passing in the submitted data
         $owner = Owner::create($data);
         // redirect the browser to the new article
-        return redirect("pages/owners/{$owner->id}"); 
+        return redirect("/owners/{$owner->id}"); 
     }
     // we need to accept Request first, using type hinting
     // and then use route model binding to get the relevant

@@ -1,7 +1,7 @@
 @extends('app')
 
 @section("content")
-    <form  method="post" >
+    <form  method="post" action="/owners/form" >
     @csrf
         <h2 class="card-header">Create Owner</h2>
 
