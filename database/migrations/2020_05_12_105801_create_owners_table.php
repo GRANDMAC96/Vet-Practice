@@ -21,7 +21,7 @@ class CreateOwnersTable extends Migration
             $table->string('address_2', 100);
             $table->string('town', 100);
             $table->string('postcode');
-            $table->string('telephone', 11);
+            $table->string('telephone', 30);
             $table->timestamps();
      });
     }
