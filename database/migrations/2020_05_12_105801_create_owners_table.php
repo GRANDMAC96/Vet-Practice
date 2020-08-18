@@ -15,6 +15,7 @@ class CreateOwnersTable extends Migration
     {
         Schema::create('owners', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('user_id');
             $table->string('first_name', 100);
             $table->string('last_name', 100);
             $table->string('address_1', 100);
@@ -23,6 +24,12 @@ class CreateOwnersTable extends Migration
             $table->string('postcode');
             $table->string('telephone', 30);
             $table->timestamps();
+
+            // laravels syntax for foreign key constraint. It allows the deletion of associated owners when a user is deleted.
+            $table->foreign('user_id')
+                ->references('id')
+                ->on('users')
+                ->onDelete('cascade');
      });
     }
 
