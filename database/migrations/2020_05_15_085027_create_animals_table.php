@@ -28,7 +28,7 @@ class CreateAnimalsTable extends Migration
             // set up the foreign key constraint
             // this tells MySQL that the animal_id column
             // references the id column on the animals table // we also want MySQL to automatically remove any // comments linked to animals that are deleted 
-            $table->foreign("owner_id")->references("id")->on("owners");
+            $table->foreign("owner_id")->references("id")->on("owners")->onDelete('cascade');
 
         });
     }
