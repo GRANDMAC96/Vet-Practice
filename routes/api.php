@@ -22,11 +22,12 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 //api route for all owners 
-Route::get("/owners", [Owners::class, "index"])->middleware('auth:api');
+Route::get("/owners", [Owners::class, "index"]);
+// ->middleware('auth:api');
 // api route for one owner
 Route::get("/owners/{owner}", [Owners::class, "show"]);
 // api route for deleting owner
-Route::get("/owners/{owner}/destroy", [Owners::class, "destroy"]);
+Route::delete("/owners/{owner}", [Owners::class, "delete"]);
 // api route for creating new owner
 Route::post("/owners", [Owners::class, "store"]);
 
@@ -35,7 +36,7 @@ Route::get("/pets", [Animals::class, "index"]);
 // api route for one animal
 Route::get("/pets/{animal}", [Animals::class, "show"]);
 // api route for deleting animal
-Route::get("/pets/{animal}/destroy", [Animals::class, "destroy"]);
+Route::delete("/pets/{animal}/destroy", [Animals::class, "destroy"]);
 // api route for creating new animal
 Route::post("/pets", [Animals::class, "store"]);
 

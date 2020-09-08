@@ -72,10 +72,10 @@ class Owners extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Owner $owner)
-    {   
+    public function delete(Owner $owner)
+    {
         $owner->delete();
-        // use a 204 code as there is no content in the response
+
         return response(null, 204);
     }
 }

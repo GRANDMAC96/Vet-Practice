@@ -20,15 +20,15 @@ class CreateAnimalsTable extends Migration
             $table->date('date_of_birth');
             $table->float('weight', 10);
             $table->float('height', 10);
-            $table->integer('biteyness')->unsigned();
+            $table->integer('biteyness');
             $table->timestamps();
             
             // create the owner_id column
-            $table->foreignId("owner_id")->unsigned();
+            $table->foreignId("owner_id");
             // set up the foreign key constraint
             // this tells MySQL that the animal_id column
             // references the id column on the animals table // we also want MySQL to automatically remove any // comments linked to animals that are deleted 
-            $table->foreign("owner_id")->references("id")->on("owners")->onDelete("cascade");
+            $table->foreign("owner_id")->references("id")->on("owners")->onDelete('cascade');
 
         });
     }
