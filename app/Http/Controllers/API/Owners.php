@@ -17,10 +17,15 @@ class Owners extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    
+    //  This should render a list of the resource
+
     public function index()
     {
         return Owner::all();
+        // return "wibble";
     }
+    
     
     
     /**
@@ -29,8 +34,8 @@ class Owners extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(OwnerRequest $request)
-    {
+    public function create(OwnerRequest $request)
+    {        
         // get all the request data
         // returns an array of all the data the user sent
         $data = $request->all();
@@ -39,7 +44,7 @@ class Owners extends Controller
         // and return it as JSON
         // automatically gets 201 status as it's a POST request
         $owner = Owner::create($data);
-        return new OwnerResource($owner);
+        return redirect("/owners/{$owner->id}"); 
     }
 
     /**
@@ -48,6 +53,8 @@ class Owners extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
+    //  Show a single resource
     public function show(Owner $owner)
     {
         // return the resource
@@ -77,5 +84,9 @@ class Owners extends Controller
         $owner->delete();
 
         return response(null, 204);
+    }
+    public function edit()
+    {
+
     }
 }

@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Owners;
+use App\Http\Controllers\Animals;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,32 +17,40 @@ use Illuminate\Support\Facades\Route;
  
 // homepage
 Route::get("/", "Home@index");
+
+
 // about page
 Route::get('about', function(){
     return view('about');
 });
 
-// Owners page
-Route::get('/owners', "Owners@index");
-
 // Form page
-Route::get('/form', "Owners@create");
+
+Route::get('/create', "Owners@form");
 
 // Create Owner method
 
 Route::post('/owners/form', "Owners@createOwner");
+
+
+// Owners page
+Route::get('/owners', "Owners@index");
+
+
+
 
 // Owner page
 Route::get('/owners/{owner}', "Owners@show");
 
 // Pets Page
 Route::get('/pets', "Animals@index");
+
 // pet page
 Route::get('/pets/{animal}', "Animals@show");
 
 
 // Show pet of owner
-// Route::post('{owner}', "Owners@animalPost");
+Route::post('{owner}', "Owners@animalPost");
 
 
 

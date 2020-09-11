@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
 use App\Owner;
+
+use Illuminate\Http\Request;
 
 use App\Http\Requests\OwnerRequest;
 
@@ -14,6 +14,7 @@ class Owners extends Controller
 {
     public function index()
     {
+
         return view("pages/owners",[
             // pass in all the articles
             'owners' => Owner::all(),
@@ -25,21 +26,23 @@ class Owners extends Controller
             "owner" => $owner
         ]); 
     }
-    public function create()
+    public function form()
     {
         return view("pages/form");
     }
+    
 
     // accept the Request object
     // this gives us access to the submitted data
-    public function createOwner(OwnerRequest $request)
+    public function createOwner()
     {   
+        dd('wibble');
         // get all of the submitted data
-        $data = $request->all();
+        // $data = $request->all();
         // create a new article, passing in the submitted data
-        $owner = Owner::create($data);
+        // $owner = Owner::create($data);
         // redirect the browser to the new article
-        return redirect("/owners/{$owner->id}"); 
+        // return redirect("/owners/{$owner->id}"); 
     }
     // we need to accept Request first, using type hinting
     // and then use route model binding to get the relevant
