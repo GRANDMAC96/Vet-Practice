@@ -17,19 +17,20 @@ use App\Http\Controllers\API\Animals;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+// Route::middleware('auth:api')->get('/user', function (Request $request) {
+//     return $request->user();
+// });
 
 //api route for all owners 
 Route::get("/owners", [Owners::class, "index"]);
 // ->middleware('auth:api');
+// api route for creating new owner
+Route::post("/owners/create", [Owners::class, "store"]);
 // api route for one owner
 Route::get("/owners/{owner}", [Owners::class, "show"]);
 // api route for deleting owner
 Route::delete("/owners/{owner}", [Owners::class, "delete"]);
-// api route for creating new owner
-Route::post("/owners", [Owners::class, "store"]);
+
 
 // api route for all animals
 Route::get("/pets", [Animals::class, "index"]);

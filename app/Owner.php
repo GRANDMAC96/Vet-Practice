@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Owner extends Model
 {
-    protected $fillable = ["first_name", "last_name", "address_1", "address_2", "town", "postcode", "telephone"];
+    protected $fillable = ["user_id", "first_name", "last_name", "address_1", "address_2", "town", "postcode", "telephone"];
 
     public function fullName()
     {
