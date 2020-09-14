@@ -26,11 +26,11 @@ Route::get('about', function(){
 
 // Form page
 
-Route::get('/create', "Owners@form");
+Route::get('/owners/create', "Owners@create");
 
 // Create Owner method
 
-Route::post('/owners/form', "Owners@createOwner");
+Route::post('/owners/create', "Owners@createOwner");
 
 
 // Owners page

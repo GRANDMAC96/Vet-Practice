@@ -26,7 +26,7 @@ class Owners extends Controller
             "owner" => $owner
         ]); 
     }
-    public function form()
+    public function create()
     {
         return view("pages/form");
     }
@@ -34,15 +34,15 @@ class Owners extends Controller
 
     // accept the Request object
     // this gives us access to the submitted data
-    public function createOwner()
+    public function createOwner(Request $request)
     {   
-        dd('wibble');
+        // dd("wibble");
         // get all of the submitted data
-        // $data = $request->all();
+        $data = $request->all();
         // create a new article, passing in the submitted data
-        // $owner = Owner::create($data);
+        $owner = Owner::create($data);
         // redirect the browser to the new article
-        // return redirect("/owners/{$owner->id}"); 
+        return redirect("/owners/{$owner->id}"); 
     }
     // we need to accept Request first, using type hinting
     // and then use route model binding to get the relevant
