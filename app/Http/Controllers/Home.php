@@ -4,10 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use Auth;
+
 class Home extends Controller
 {
     public function index()
     {
+        $user_id = Auth::id();
         $greetings = "";
 
         /* This sets the $time variable to the current hour in the 24 hour clock format */

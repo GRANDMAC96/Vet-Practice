@@ -14,33 +14,37 @@ use App\Http\Controllers\Animals;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Auth::routes(['register' => false]);
  
-// homepage
-Route::get("/", "Home@index");
+// Middleware is involved in security so that people can't access data without being a registered user.
 
-
-// about page
-Route::get('about', function(){
+Route::group(["middleware" => "auth"], function(){
+    // about page
+    Route::get('about', function(){
     return view('about');
+    });
+    // homepage
+    Route::get("/", "Home@index");
+    // Form page
+    Route::get('/owners/create', "Owners@create");
+    // Create Owner method
+    Route::post('/owners/create', "Owners@createOwner");
+    // Owners page
+    Route::get('/owners', "Owners@index");
+    // Owner page
+    Route::get('/owners/{owner}', "Owners@show");
 });
 
-// Form page
-
-Route::get('/owners/create', "Owners@create");
-
-// Create Owner method
-
-Route::post('/owners/create', "Owners@createOwner");
-
-
-// Owners page
-Route::get('/owners', "Owners@index");
 
 
 
 
-// Owner page
-Route::get('/owners/{owner}', "Owners@show");
+
+
+
+
+
 
 // Pets Page
 Route::get('/pets', "Animals@index");
@@ -57,3 +61,11 @@ Route::post('{owner}', "Owners@animalPost");
 
 
 // This id is the one that gets past to the method in controller
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
