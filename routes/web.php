@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Owners;
 use App\Http\Controllers\Animals;
+use App\Http\Controllers\Home;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,17 +16,20 @@ use App\Http\Controllers\Animals;
 |
 */
 
-Auth::routes(['register' => false]);
- 
+Auth::routes();
+
+// homepage
+Route::get("/", "Homecontroller@index");     
+// // Register page
+// Route::get("/register", "Homecontroller@show");
+// // Register form
+// Route::get("/register", "Homecontroller@show");
+// // Login page
+// Route::get("/login", "Homecontroller@loginPage");
+
 // Middleware is involved in security so that people can't access data without being a registered user.
 
 Route::group(["middleware" => "auth"], function(){
-    // about page
-    Route::get('about', function(){
-    return view('about');
-    });
-    // homepage
-    Route::get("/", "Home@index");
     // Form page
     Route::get('/owners/create', "Owners@create");
     // Create Owner method
@@ -61,6 +65,10 @@ Route::post('{owner}', "Owners@animalPost");
 
 
 // This id is the one that gets past to the method in controller
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
 
 Auth::routes();
 
