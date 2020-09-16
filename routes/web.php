@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Owners;
 use App\Http\Controllers\Animals;
+use App\Http\Controllers\Home;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,33 +15,40 @@ use App\Http\Controllers\Animals;
 | contains the "web" middleware group. Now create something great!
 |
 */
- 
+
+Auth::routes();
+
 // homepage
-Route::get("/", "Home@index");
+Route::get("/", "Homecontroller@index");     
+// // Register page
+// Route::get("/register", "Homecontroller@show");
+// // Register form
+// Route::get("/register", "Homecontroller@show");
+// // Login page
+// Route::get("/login", "Homecontroller@loginPage");
 
+// Middleware is involved in security so that people can't access data without being a registered user.
 
-// about page
-Route::get('about', function(){
-    return view('about');
+Route::group(["middleware" => "auth"], function(){
+    // Form page
+    Route::get('/owners/create', "Owners@create");
+    // Create Owner method
+    Route::post('/owners/create', "Owners@createOwner");
+    // Owners page
+    Route::get('/owners', "Owners@index");
+    // Owner page
+    Route::get('/owners/{owner}', "Owners@show");
 });
 
-// Form page
-
-Route::get('/owners/create', "Owners@create");
-
-// Create Owner method
-
-Route::post('/owners/create', "Owners@createOwner");
-
-
-// Owners page
-Route::get('/owners', "Owners@index");
 
 
 
 
-// Owner page
-Route::get('/owners/{owner}', "Owners@show");
+
+
+
+
+
 
 // Pets Page
 Route::get('/pets', "Animals@index");
@@ -57,3 +65,15 @@ Route::post('{owner}', "Owners@animalPost");
 
 
 // This id is the one that gets past to the method in controller
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
