@@ -16,4 +16,10 @@ class Animal extends Model
     {
         return $this->species;
     }
+    public function dangerous()
+    {
+        if ($this->biteyness > 4) {
+            return "Dangerous";
+        }
+    }
 }
