@@ -4,5 +4,6 @@
     <a class="navbar-brand" href="/register">Register</a>
     <a class="navbar-brand" href="/owners">Owners</a>
     <a class="navbar-brand" href="/owners/create">Create Owner</a>
-    <a class="navbar-brand" href="/pets">Pets</a>
+    <a class="navbar-brand" href="/animals">Pets</a>
+    <a class="navbar-brand" href="/animals/create">Create Pet</a>
 </nav>
