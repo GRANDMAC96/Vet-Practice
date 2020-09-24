@@ -19,7 +19,10 @@ use App\Http\Controllers\Home;
 Auth::routes();
 
 // homepage
-Route::get("/", "Homecontroller@index");     
+Route::get("/", "Homecontroller@index");
+// This id is the one that gets past to the method in controller
+// Auth::routes();
+// Route::get('/home', 'HomeController@index')->name('home');     
 // // Register page
 // Route::get("/register", "Homecontroller@show");
 // // Register form
@@ -40,40 +43,12 @@ Route::group(["middleware" => "auth"], function(){
     Route::get('/owners/{owner}', "Owners@show");
 });
 
-
-
-
-
-
-
-
-
-
-
 // Pets Page
 Route::get('/pets', "Animals@index");
-
 // pet page
 Route::get('/pets/{animal}', "Animals@show");
-
-
 // Show pet of owner
 Route::post('{owner}', "Owners@animalPost");
-
-
-
-
-
-// This id is the one that gets past to the method in controller
-
 Auth::routes();
-
 Route::get('/home', 'HomeController@index')->name('home');
 
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
