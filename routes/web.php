@@ -20,15 +20,6 @@ Auth::routes();
 
 // homepage
 Route::get("/", "Homecontroller@index");
-// This id is the one that gets past to the method in controller
-// Auth::routes();
-// Route::get('/home', 'HomeController@index')->name('home');     
-// // Register page
-// Route::get("/register", "Homecontroller@show");
-// // Register form
-// Route::get("/register", "Homecontroller@show");
-// // Login page
-// Route::get("/login", "Homecontroller@loginPage");
 
 // Middleware is involved in security so that people can't access data without being a registered user.
 
