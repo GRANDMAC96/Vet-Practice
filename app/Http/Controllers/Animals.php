@@ -23,6 +23,10 @@ class Animals extends Controller
             "animal" => $animal
         ]); 
     }
+    // public function animalProperties()
+    // {
+        
+    // }
     // public function create()
     // {
     //     return view("pages/petform");

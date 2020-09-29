@@ -1,16 +1,16 @@
 @extends("app")
 
 @section("content")
-    <div class="card" id="delete-button">
+    <div class="card" >
         <h2 class="card-header">{{ $owner->fullAddress() }}</h2>
-        <button>Delete</button>                           
+        <button id="delete-button">Delete</button>                           
         <article class="card-body">
              {{-- {{ /* if an article has comments list them */ }}  --}}
                 {{-- @if($owner->animals->isNotEmpty()) --}}
                      <div class="list-group">
                         @foreach ($owner->animals as $animal)
                             <div class="d-flex w-100 justify-content-between" > 
-                                <a href="pages/pets"><h5 class="mb-1">{{ $animal->name }}</h5></a>
+                                <a href="/animals/{{ $animal->id }}"><h5 class="mb-1">{{ $animal->name }}</h5></a>
                             </div>
                             {{-- <p class="mb-1">{{ $owner->animals }}</p>  --}}
                             @endforeach

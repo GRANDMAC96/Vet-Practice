@@ -21,6 +21,9 @@ Auth::routes();
 // homepage
 Route::get("/", "Homecontroller@index");
 
+Auth::routes();
+Route::get('/home', 'HomeController@index')->name('home');
+
 // Middleware is involved in security so that people can't access data without being a registered user.
 
 Route::group(["middleware" => "auth"], function(){
@@ -35,11 +38,12 @@ Route::group(["middleware" => "auth"], function(){
 });
 
 // Pets Page
-Route::get('/pets', "Animals@index");
+Route::get('/animals', "Animals@index");
 // pet page
-Route::get('/pets/{animal}', "Animals@show");
+Route::get('/animals/{animal}', "Animals@show");
 // Show pet of owner
-Route::post('{owner}', "Owners@animalPost");
-Auth::routes();
-Route::get('/home', 'HomeController@index')->name('home');
+// Route::post('{owner}', "Owners@animalPost");
+// Show animal properties
+// Route::get('animals/{animal}', "Animals@animalProperties");
+
 
