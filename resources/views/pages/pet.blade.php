@@ -9,7 +9,7 @@
                      <div class="list-group">
                         {{-- @foreach ($animal as $animal) --}}
                             <div class="d-flex w-100 justify-content-between"> 
-                                <a href="pages/pets"><h5 class="mb-1">{{ $animal->animalProperties() }}</h5></a>
+                                <a href="/animals/{{ $animal->id }}"><h5 class="mb-1">{{ $animal->name }}</h5></a>
                             </div>
 
                             {{-- <p class="mb-1">{{ $owner->animals }}</p>  --}}

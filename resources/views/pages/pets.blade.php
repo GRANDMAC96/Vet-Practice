@@ -6,7 +6,7 @@
                     {{-- { /* loop over all of the articles */ } --}}
                     {{-- { /* each article object goes into $article */ } --}}
                     @foreach ($animals as $animal)
-                        <a href="/pets/{{ $animal->id }}" class="list-group-item list-group-item-action">
+                        <a href="/animals/{{ $animal->id }}" class="list-group-item list-group-item-action">
                             <div class="d-flex w-100 justify-content-between">
 
                                 {{-- { /* output the animal and its properties */ } --}}

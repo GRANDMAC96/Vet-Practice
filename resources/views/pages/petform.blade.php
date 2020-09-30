@@ -15,51 +15,51 @@
                 </p>
             @enderror  
             <div class="form-group">
-                <label for="last_name">Last Name</label>
-                <input id="last_name" name="last_name" class="form-control" value="{{ old('last_name') }}"/>
+                <label for="species">Species</label>
+                <input id="species" name="species" class="form-control" value="{{ old('species') }}"/>
             </div>
-            @error('last_name')
-                <p class="form-control @error('last_name') is-invalid @enderror"> {{ $message }}
+            @error('species')
+                <p class="form-control @error('species') is-invalid @enderror"> {{ $message }}
                 </p>
             @enderror
             <div class="form-group">
-                <label for="address_1">Address</label>
-                <input id="address_1" name="address_1" class="form-control" value="{{ old('address_1') }}"/>    
+                <label for="date_of_birth">Date of Birth</label>
+                <input id="date_of_birth" name="date_of_birth" class="form-control" value="{{ old('date_of_birth') }}"/>    
             </div>
-            @error('address_1')
-                <p class="form-control @error('address_1') is-invalid @enderror"> {{ $message }}
+            @error('date_of_birth')
+                <p class="form-control @error('date_of_birth') is-invalid @enderror"> {{ $message }}
                 </p>
             @enderror 
             <div class="form-group">
-                <label for="address_2">Address</label>
-                <input id="address_2" name="address_2" class="form-control" value="{{ old('address_2') }}"/>
+                <label for="weight">Weight(kg)</label>
+                <input id="weight" name="weight" class="form-control" value="{{ old('weight') }}"/>
             </div>
-            @error('address_2')
-                <p class="form-control @error('address_2') is-invalid @enderror"> {{ $message }}
+            @error('weight')
+                <p class="form-control @error('weight') is-invalid @enderror"> {{ $message }}
                 </p>
             @enderror
             <div class="form-group">
-                <label for="town">Town</label>
-                <input id="town" name="town" class="form-control" value="{{ old('town') }}"/>  
+                <label for="height">Height(m)</label>
+                <input id="height" name="height" class="form-control" value="{{ old('height') }}"/>  
             </div>
-            @error('town')
-                <p class="form-control @error('town') is-invalid @enderror"> {{ $message }}
+            @error('height')
+                <p class="form-control @error('height') is-invalid @enderror"> {{ $message }}
                 </p>
             @enderror
             <div class="form-group">
-                <label for="postcode">Postcode</label>
-                <input id="postcode" name="postcode" class="form-control" value="{{ old('postcode') }}"/> 
+                <label for="biteyness">Safety Rating(1-5)</label>
+                <input id="biteyness" name="biteyness" class="form-control" value="{{ old('biteyness') }}"/> 
             </div>
-            @error('postcode')
-                <p class="form-control @error('postcode') is-invalid @enderror"> {{ $message }}
+            @error('biteyness')
+                <p class="form-control @error('biteyness') is-invalid @enderror"> {{ $message }}
                 </p>
             @enderror
             <div class="form-group">
-                <label for="telephone">Telephone</label>
-                <input id="telephone" name="telephone" class="form-control" value="{{ old('telephone') }}"/> 
+                <label for="owner_id">Owner ID</label>
+                <input id="owner_id" name="owner_id" class="form-control" value="{{ old('owner_id') }}"/> 
             </div>
-            @error('telephone')
-                <p class="form-control @error('telephone') is-invalid @enderror"> {{ $message }}
+            @error('owner_id')
+                <p class="form-control @error('owner_id') is-invalid @enderror"> {{ $message }}
                 </p>
             @enderror
               

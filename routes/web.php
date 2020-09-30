@@ -21,10 +21,13 @@ Auth::routes();
 // homepage
 Route::get("/", "Homecontroller@index");
 
+Auth::routes();
+Route::get('/home', 'HomeController@index')->name('home');
+
 // Middleware is involved in security so that people can't access data without being a registered user.
 
 Route::group(["middleware" => "auth"], function(){
-    // Form page
+    // Create owner page
     Route::get('/owners/create', "Owners@create");
     // Create Owner method
     Route::post('/owners/create', "Owners@createOwner");
@@ -34,12 +37,19 @@ Route::group(["middleware" => "auth"], function(){
     Route::get('/owners/{owner}', "Owners@show");
 });
 
+// Create pet page
+Route::get('/animals/create', "Animals@create");
+// Create animal method
+Route::post('animals/create', "Animals@createAnimal");
 // Pets Page
-Route::get('/pets', "Animals@index");
-// pet page
-Route::get('/pets/{animal}', "Animals@show");
+Route::get('/animals', "Animals@index");
+// Pet page
+Route::get('/animals/{animal}', "Animals@show");
+
+
 // Show pet of owner
-Route::post('{owner}', "Owners@animalPost");
-Auth::routes();
-Route::get('/home', 'HomeController@index')->name('home');
+// Route::post('{owner}', "Owners@animalPost");
+// Show animal properties
+// Route::get('animals/{animal}', "Animals@animalProperties");
+
 

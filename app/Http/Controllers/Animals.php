@@ -23,18 +23,22 @@ class Animals extends Controller
             "animal" => $animal
         ]); 
     }
-    // public function create()
+    // public function animalProperties()
     // {
-    //     return view("pages/petform");
+        
     // }
-    // public function createAnimal(Animal $animal)
-    // {
-    //     // dd("wibble");
-    //     // get all of the submitted data
-    //     $data = $request->all();
-    //     // create a new article, passing in the submitted data
-    //     $owner = Animal::create($data);
-    //     // redirect the browser to the new article
-    //     return redirect("/owners/{$owner->id}");
-    // }
+    public function create()
+    {
+        return view("pages/petform");
+    }
+    public function createAnimal(Request $request)
+    {
+        // dd("wibble");
+        // get all of the submitted data
+        $data = $request->all();
+        // create a new article, passing in the submitted data
+        $animal = Animal::create($data);
+        // redirect the browser to the new article
+        return redirect("/animals/{$animal->id}");
+    }
 }
