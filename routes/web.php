@@ -37,10 +37,13 @@ Route::group(["middleware" => "auth"], function(){
     Route::get('/owners/{owner}', "Owners@show");
 });
 
+// Create pet page
+Route::get('/animals/create', "Animals@create");
 // Pets Page
 Route::get('/animals', "Animals@index");
-// pet page
+// Pet page
 Route::get('/animals/{animal}', "Animals@show");
+
 // Show pet of owner
 // Route::post('{owner}', "Owners@animalPost");
 // Show animal properties
