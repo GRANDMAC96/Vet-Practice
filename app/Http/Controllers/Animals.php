@@ -27,10 +27,10 @@ class Animals extends Controller
     // {
         
     // }
-    // public function create()
-    // {
-    //     return view("pages/petform");
-    // }
+    public function create()
+    {
+        return view("pages/petform");
+    }
     // public function createAnimal(Animal $animal)
     // {
     //     // dd("wibble");
