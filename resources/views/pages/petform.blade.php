@@ -31,7 +31,7 @@
                 </p>
             @enderror 
             <div class="form-group">
-                <label for="weight">Weight</label>
+                <label for="weight">Weight(kg)</label>
                 <input id="weight" name="weight" class="form-control" value="{{ old('weight') }}"/>
             </div>
             @error('weight')
@@ -39,7 +39,7 @@
                 </p>
             @enderror
             <div class="form-group">
-                <label for="height">Height</label>
+                <label for="height">Height(m)</label>
                 <input id="height" name="height" class="form-control" value="{{ old('height') }}"/>  
             </div>
             @error('height')
@@ -47,7 +47,7 @@
                 </p>
             @enderror
             <div class="form-group">
-                <label for="biteyness">Safety Rating</label>
+                <label for="biteyness">Safety Rating(1-5)</label>
                 <input id="biteyness" name="biteyness" class="form-control" value="{{ old('biteyness') }}"/> 
             </div>
             @error('biteyness')
